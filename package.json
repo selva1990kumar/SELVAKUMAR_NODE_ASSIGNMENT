@@ -1,0 +1,17 @@
+{
+  "name": "productsapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-joi-validation": "^0.2.1",
+    "ignore-case": "^0.1.0",
+    "joi": "^13.1.2"
+  }
+}
