@@ -1,0 +1,279 @@
+////////////////////////////////////////////  API Detail  //////////////////////////////////////////////
+
+
+
+//1
+API: http://localhost:4000/product/
+POST Request
+Sample Request
+{
+    "offset": 0,
+        "limit": 2
+
+}
+
+Sample Response
+[
+    {
+        "id": "2",
+        "productName": "KUMAR",
+        "price": 6999,
+        "inTheBox": "Charger, User Manual",
+        "modelNumber": "ERA-2V2",
+        "size": "5.5 inch",
+        "category": "accessories",
+        "color": "white",
+        "touchScreen": "no",
+        "image": "http://localhost:4000/images/mobile.jpeg"
+    },
+    {
+        "id": "3",
+        "productName": "mobile",
+        "price": 7999,
+        "inTheBox": "Mobile Cover, User Manual",
+        "modelNumber": "ERA-2V1",
+        "size": "5.5 inch",
+        "category": "mobile",
+        "color": "black",
+        "touchScreen": "no",
+        "image": "http://localhost:4000/images/mobile.jpeg"
+    }
+]
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//2
+API: http://localhost:4000/product/add
+POST Request
+Sample Request
+{
+    "productName": "chardfger",
+        "price": 6999,
+            "inTheBox": "Charger, User Manual",
+                "modelNumber": "ERA-2V2",
+                    "size": "5.5 inch",
+                        "category": "accessories",
+                            "color": "white",
+                                "touchScreen": "no",
+                                    "image": "http://localhost:4000/images/mobile.jpeg"
+}
+Sample Response
+
+All json dataphone
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//3
+API: http://localhost:4000/product/update
+PUT Request
+Sample Request
+{
+    "id": "2",
+        "productName": "chel",
+            "price": 6999,
+                "inTheBox": "Charger, User Manual",
+                    "modelNumber": "ERA-2V2",
+                        "size": "5.5 inch",
+                            "category": "accessories",
+                                "color": "white",
+                                    "touchScreen": "no",
+                                        "image": "http://localhost:4000/images/mobile.jpeg"
+}
+Sample Response
+All json dataphone with updated one.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//4
+    API: http://localhost:4000/product/update
+DELETE Request
+Sample Request
+{
+    "id": 5
+}
+Sample Response
+All json dataphone without deleted.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//5
+    API: http://localhost:4000/product/searchByNameOrId
+POST Request
+Sample Request
+{
+    "productName": "mobile"
+}
+OR
+{
+    "id": "3"
+}
+Sample Response
+{
+    "id": "3",
+        "productName": "mobile",
+            "price": 7999,
+                "inTheBox": "Mobile Cover, User Manual",
+                    "modelNumber": "ERA-2V1",
+                        "size": "5.5 inch",
+                            "category": "mobile",
+                                "color": "black",
+                                    "touchScreen": "no",
+                                        "image": "http://localhost:4000/images/mobile.jpeg"
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//6 	
+API: http://localhost:4000/product/searchByName
+POST Request
+Sample Request
+{
+    "productName": "Mo",
+        "offset": 0,
+            "limit" : 2
+
+}
+Sample Response
+[
+    {
+        "id": "3",
+        "productName": "mobile",
+        "price": 7999,
+        "inTheBox": "Mobile Cover, User Manual",
+        "modelNumber": "ERA-2V1",
+        "size": "5.5 inch",
+        "category": "mobile",
+        "color": "black",
+        "touchScreen": "no",
+        "image": "http://localhost:4000/images/mobile.jpeg"
+    },
+    {
+        "id": "4",
+        "productName": "mobile cover",
+        "price": 8999,
+        "inTheBox": "Mobile Cover, User Manual",
+        "modelNumber": "ERA-2V1",
+        "size": "5.5 inch",
+        "category": "accessories",
+        "color": "white",
+        "touchScreen": "no",
+        "image": "http://localhost:4000/images/mobile.jpeg"
+    }
+]
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//7. Get products grouped by category ( sample output )
+
+API: http://localhost:4000/product/groupByCategory
+
+{
+    "accessories": [
+        {
+            "id": "2",
+            "productName": "KUMAR",
+            "price": 6999,
+            "inTheBox": "Charger, User Manual",
+            "modelNumber": "ERA-2V2",
+            "size": "5.5 inch",
+            "category": "accessories",
+            "color": "white",
+            "touchScreen": "no",
+            "image": "http://localhost:4000/images/mobile.jpeg"
+        },
+        {
+            "id": "4",
+            "productName": "mobile cover",
+            "price": 8999,
+            "inTheBox": "Mobile Cover, User Manual",
+            "modelNumber": "ERA-2V1",
+            "size": "5.5 inch",
+            "category": "accessories",
+            "color": "white",
+            "touchScreen": "no",
+            "image": "http://localhost:4000/images/mobile.jpeg"
+        }
+    ],
+        "mobile": [
+            {
+                "id": "3",
+                "productName": "mobile",
+                "price": 7999,
+                "inTheBox": "Mobile Cover, User Manual",
+                "modelNumber": "ERA-2V1",
+                "size": "5.5 inch",
+                "category": "mobile",
+                "color": "black",
+                "touchScreen": "no",
+                "image": "http://localhost:4000/images/mobile.jpeg"
+            },
+            {
+                "id": 5,
+                "productName": "dataphone",
+                "price": "5999",
+                "inTheBox": "Handset, Battery, Charger, User Manual, Headset, Screen Guard",
+                "modelNumber": "ERA-2V",
+                "size": "5 inch",
+                "category": "mobile",
+                "color": "black",
+                "touchScreen": "yes",
+                "image": "http://localhost:4000/images/mobile.jpeg"
+            },
+            {
+                "id": 6,
+                "productName": "phone",
+                "price": "5999",
+                "inTheBox": "Handset, Battery, Charger, User Manual, Headset, Screen Guard",
+                "modelNumber": "ERA-2V",
+                "size": "5 inch",
+                "category": "mobile",
+                "color": "black",
+                "touchScreen": "yes",
+                "image": "http://localhost:4000/images/mobile.jpeg"
+            }
+        ]
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//8
+API: http://localhost:4000/product/searchGlobally
+Sample Request
+{
+    "name" : "acc"
+}
+
+Sample Response:
+[
+    {
+        "id": "2",
+        "productName": "KUMAR",
+        "price": 6999,
+        "inTheBox": "Charger, User Manual",
+        "modelNumber": "ERA-2V2",
+        "size": "5.5 inch",
+        "category": "accessories",
+        "color": "white",
+        "touchScreen": "no",
+        "image": "http://localhost:4000/images/mobile.jpeg"
+    },
+    {
+        "id": "4",
+        "productName": "mobile cover",
+        "price": 8999,
+        "inTheBox": "Mobile Cover, User Manual",
+        "modelNumber": "ERA-2V1",
+        "size": "5.5 inch",
+        "category": "accessories",
+        "color": "white",
+        "touchScreen": "no",
+        "image": "http://localhost:4000/images/mobile.jpeg"
+    }
+]
+
+
+
+
+
