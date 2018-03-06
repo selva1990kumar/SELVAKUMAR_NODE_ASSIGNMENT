@@ -1,10 +1,10 @@
 # Project - Product Application
 
 Running Locally
-...sh
+```sh
 $ Usage Install dependencies npm i
 $ Start application npm start
-
+```
 Functionalities
 
 * List products (should support pagination)
